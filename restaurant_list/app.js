@@ -32,9 +32,15 @@ app.get('/restaurants/:restaurant_id', (req, res) => {
 app.get('/search', (req, res) => {
   // console.log('req.query', req.query)
   const keyword = req.query.keyword
-  const restaurants = restaurantList.results.filter(restaurant => {
+  const name = restaurantList.results.filter(restaurant => {
     return restaurant.name.toLowerCase().includes(keyword.toLowerCase())
   })
+  const categories = restaurantList.results.filter(restaurant => {
+    return restaurant.category.toLowerCase().includes(keyword.toLowerCase())
+  })
+  // 使用 concat 組合兩個 filter 過的 array, 可能會有重複的狀況
+  // 使用 filter 過濾 categories array, name.indexOf(條件) === -1 代表不存在於 name array, 這種情況下，再把選項拿進 name array 裡面組合
+  const restaurants = name.concat(categories.filter(category => name.indexOf(category) === -1))
   res.render('index', { restaurants: restaurants, keyword: keyword })
 })
 
