@@ -10,7 +10,7 @@
 
 #### 專案畫面
 
-![image](https://github.com/Ingrid-chi/AC_practice/blob/main/S6_express_basic_acceptance/public/images/S6_express_basic_acceptance_index.jpg)
+![image](https://github.com/Ingrid-chi/AC_practice/blob/main/S6_express_basic_acceptance/public/images/S6_express_basic_acceptance.jpg)
 
 #### 安裝
 
